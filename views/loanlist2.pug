@@ -1,0 +1,27 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700' rel='stylesheet')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='shortcut icon' type='image/png' href='img/favicon.png')
+  title  Loan Database 
+h1 This is dynamic loan Overview
+div
+  table.table-header
+    thead
+      tr
+        th(scope='ID') Customer
+        th(scope='col') Loan Type
+        th(scope='col') Amount
+        th(scope='col') Rate
+        th(scope='col') Term
+    tbody
+      | each loan in loans 
+      tr.table-secondary
+        td
+          | #{loan.customerName}
+        td #{loan.loanType}
+        td #{loan.loanAmount}
+        td #{loan.interestRate}
+        td #{loan.loanTerm}

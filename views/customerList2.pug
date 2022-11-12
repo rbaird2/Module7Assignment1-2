@@ -1,0 +1,27 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700' rel='stylesheet')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='shortcut icon' type='image/png' href='img/favicon.png')
+  title  Loan Database 
+h1 This is dynamic customer Overview
+div
+  table.table-header
+    thead
+      tr
+        th(scope='col') ID
+        th(scope='col') First Name
+        th(scope='col') Last Name
+        th(scope='col') DOB
+        th(scope='col') Gender
+    tbody
+      | each course in courses 
+      tr.table-secondary
+        td
+          | #{customer.customerId}
+        td #{customer.firstName}
+        td #{customer.lastName}
+        td #{customer.dateOfBirth}
+        td #{customer.gender}
